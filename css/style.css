@@ -6,11 +6,31 @@
 
 body {
   font-family: "Montserrat", sans-serif;
-  background-color: #273c75;
+  background-color: #222f3e;
+}
+
+a {
+  text-decoration: none;
+  color: #273c75;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #130f40;
+  transition: all 0.6 ease-in;
 }
 
 .navbar-brand {
   font-family: "Chelsea Market", cursive;
+  cursor: pointer;
+}
+
+#tracks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .card {
@@ -18,4 +38,17 @@ body {
   margin: 1rem 0;
   background-color: #ecf0f1;
   color: #000000;
+}
+
+.card .btn {
+  display: block;
+  background-color: #0275d8;
+  border: none;
+}
+
+#lyrics {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
