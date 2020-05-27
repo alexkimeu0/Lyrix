@@ -1,4 +1,4 @@
-const API_KEY = "bb6bad3d42f99e6d310ae2730b7bd046";
+const API_KEY = "";
 
 $(document).ready(() => {
   getTracks();
@@ -14,7 +14,7 @@ $(document).ready(() => {
 function searchResults(searchTxt) {
   axios
     .get(
-      `https://shrouded-harbor-39689.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.search?q_track=${searchTxt}&page_size=10&page=1&apikey=${API_KEY}`
+      `http://api.musixmatch.com/ws/1.1/track.search?q_track=${searchTxt}&page_size=10&page=1&apikey=${API_KEY}`
     )
     .then((res) => {
       let tracks = res.data.message.body.track_list;
@@ -46,7 +46,7 @@ function searchResults(searchTxt) {
 function getTracks() {
   axios
     .get(
-      `https://shrouded-harbor-39689.herokuapp.com/https://api.musixmatch.com/ws/1.1/chart.tracks.get?&page=1&page_size=10&country=us&f_has_lyrics=1&apikey=${API_KEY}`
+      `https://api.musixmatch.com/ws/1.1/chart.tracks.get?&page=1&page_size=10&country=us&f_has_lyrics=1&apikey=${API_KEY}`
     )
     .then((res) => {
       let tracks = res.data.message.body.track_list;
@@ -87,7 +87,7 @@ function getTrack() {
 
   axios
     .get(
-      `https://shrouded-harbor-39689.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=${track_id}&apikey=${API_KEY}`
+      `http://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=${track_id}&apikey=${API_KEY}`
     )
     .then((response) => {
       let lyrics = response.data.message.body.lyrics.lyrics_body;
@@ -107,7 +107,7 @@ function getTrack() {
 
       return axios
         .get(
-          `https://shrouded-harbor-39689.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.get?track_id=${track_id}&apikey=${API_KEY}`
+          `http://api.musixmatch.com/ws/1.1/track.get?track_id=${track_id}&apikey=${API_KEY}`
         )
         .then((res) => {
           let track = res.data.message.body.track;
